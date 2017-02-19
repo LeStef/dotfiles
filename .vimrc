@@ -36,9 +36,6 @@ let g:netrw_altv = 1
 "default netrw tree default size
 let g:netrw_winsize = 25
 
-"---------------JSPlugin ------------"
-let g:javascript_plugin_jsdoc = 1
-
 "---------------Tabs-----------------"
 set tabstop=2
 set shiftwidth=2
@@ -64,8 +61,7 @@ au FocusLost * :wa
 
 "---------------Visual-----------------"
 
-"colorscheme darkblue
-"colorscheme distinguished
+colorscheme desert
 
 "---------------Search-----------------"
 set ignorecase
@@ -89,8 +85,8 @@ vmap <S-Tab> <gv
 "-------------Auto-Commands--------------"
 
 "Automatically source the Vimrc file on save.
-"augroup autosourcing
-"	autocmd!
-"	autocmd BufWritePost .vimrc source %
-"augroup END
+augroup autosourcing
+	autocmd!
+	autocmd BufWritePost .vimrc source %
+augroup END
 "autocmd BufEnter * silent! lcd %:p:h
