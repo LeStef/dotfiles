@@ -15,14 +15,38 @@ set nocompatible
 "prevents some security exploits having to do with modelines in files
 set modelines=0
 "Permet d'annuler une modif même après fermeture d'un fichier
-set undofile
+"set undofile
 
 set makeprg=npm\ test
 
 "Enable the 256 color pallet
 set t_Co=256
 "let Vim know we want a dark background and light foreground
-set background=dark
+"set background=dark
+
+"vim refresh to 250ms
+set updatetime=250
+
+"fuzzy search like controlP ?
+"search into subfolders and provides a tab completion for all file related
+"tasks
+set path+=**
+
+" Display all matching files when we tab complete
+set wildmenu
+
+"Now we can :
+" - Hit tab to :find by partial match
+" - Use * to make it fuzzy
+
+"---------------Color base16 plugin-------------------
+"let base16colorspace=256  " Access colors present in 256 colorspace
+"colorscheme base16-solarized-light
+"if filereadable(expand("~/.vimrc_background"))
+"  let base16colorspace=256
+"    source ~/.vimrc_background
+"endif
+
 
 "---------------Netrw----------------"
 "Tree style for file browsing
@@ -31,10 +55,22 @@ let g:netrw_liststyle = 3
 let g:netrw_banner = 0
 "Open a file by default in vsplit (1 split, 2 vsplit, 3 new tab, 4 previous
 "window)
-let g:netrw_browse_split = 4
+let g:netrw_browse_split = 2
 let g:netrw_altv = 1
 "default netrw tree default size
-let g:netrw_winsize = 25
+"let g:netrw_winsize = 30
+
+
+"---------------syntastic-----------------"
+"set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 0
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
 
 "---------------Tabs-----------------"
 set tabstop=2
@@ -76,11 +112,19 @@ nmap <Leader><space> :nohlsearch<cr>
 nmap <Leader>ev :tabedit $MYVIMRC<cr>
 "Ouvre/ferme NerdTree
 nmap <C-n> :NERDTreeToggle<cr>
+"Ctrl-s pour la sauvegarde
+nmap <C-s> :w<cr>
+"noremap <silent><C-S>:update<CR>
+"vnoremap <silent><C-S><C-C>:update<CR>
+"inoremap <silent><C-S><C-O>:update<CR>
+
 "Indentation sur tab
 nmap <Tab> >>
 nmap <S-Tab> <<
 vmap <Tab> >gv
 vmap <S-Tab> <gv
+nmap <C-Right> :tabn<cr>
+nmap <C-Left> :tabp<cr>
 
 "-------------Auto-Commands--------------"
 
