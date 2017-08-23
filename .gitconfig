@@ -1,0 +1,12 @@
+[user]
+	name = Stéphane Pajot
+	email = stephane.pajot@nexxtep-technologies.com
+[credential]
+	helper = cache
+[core]
+	autocrlf = input
+[alias]
+	glog = log --graph --decorate
+	lg = log --graph --date=short --decorate --oneline
+	st = status
+	co = checkout
