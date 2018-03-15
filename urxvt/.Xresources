@@ -1,7 +1,7 @@
 URxvt.font: xft:monospace:size=11
 
 !! Colors
-!!General
+!! General
 *foreground: #00cc00
 *foreground_bold: #a8a19f
 *cursor: #a8a19f
