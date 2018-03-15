@@ -34,4 +34,4 @@ URxvt.font: xft:monospace:size=11
 
 URxvt.scrollBar: false
 
-URxvt.perl-ext-common:	resize-font
+URxvt.perl-ext-common:	default,resize-font
