@@ -2,3 +2,5 @@ URxvt.font: xft:monospace:size=11
 URxvt*foreground: white
 URxvt*background: black
 URxvt.scrollBar: false
+
+URxvt.perl-ext-common:	resize-font
