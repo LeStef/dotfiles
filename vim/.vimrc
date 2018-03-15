@@ -86,8 +86,6 @@ set incsearch
 nmap <Leader><space> :nohlsearch<cr>
 "make it easy to edit the Vimrc file.
 nmap <Leader>ev :tabedit $MYVIMRC<cr>
-"Ouvre/ferme NerdTree
-nmap <C-n> :NERDTreeToggle<cr>
 "Ctrl-s pour la sauvegarde
 nmap <C-s> :w<cr>
 "noremap <silent><C-S>:update<CR>
