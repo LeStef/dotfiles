@@ -9,7 +9,9 @@ syntax enable
 let mapleader = ","
 set backspace=indent,eol,start
 "numerote les lignes : attention, cette option pose pb lors de copier coller à la souris !
-"set number
+set number
+"met en place la numérotation relative
+set relativenumber
 "empeche la retrocompatibilité avec vi...pas le peine !
 set nocompatible
 "prevents some security exploits having to do with modelines in files
@@ -22,7 +24,7 @@ set makeprg=npm\ test
 "Enable the 256 color pallet
 set t_Co=256
 "let Vim know we want a dark background and light foreground
-"set background=dark
+set background=dark
 
 "vim refresh to 250ms
 set updatetime=250
@@ -39,15 +41,6 @@ set wildmenu
 " - Hit tab to :find by partial match
 " - Use * to make it fuzzy
 
-"---------------Color base16 plugin-------------------
-"let base16colorspace=256  " Access colors present in 256 colorspace
-"colorscheme base16-solarized-light
-"if filereadable(expand("~/.vimrc_background"))
-"  let base16colorspace=256
-"    source ~/.vimrc_background
-"endif
-
-
 "---------------Netrw----------------"
 "Tree style for file browsing
 let g:netrw_liststyle = 3
@@ -60,44 +53,27 @@ let g:netrw_altv = 1
 "default netrw tree default size
 "let g:netrw_winsize = 30
 
-
-"---------------syntastic-----------------"
-"set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 0
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_javascript_checkers = ['eslint']
-
 "---------------Tabs-----------------"
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 set expandtab
 
 "---------------hjkl-----------------"
-"nnoremap <up> <nop>
-"nnoremap <down> <nop>
-"nnoremap <left> <nop>
-"nnoremap <right> <nop>
-"inoremap <up> <nop>
-"inoremap <down> <nop>
-"inoremap <left> <nop>
-"inoremap <right> <nop>
-"nnoremap j gj
-"nnoremap k gk
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+nnoremap j gj
+nnoremap k gk
 
 
 "---------------Save when loosing focus-----------------"
 au FocusLost * :wa
-
-
-"---------------Visual-----------------"
-
-colorscheme desert
 
 "---------------Search-----------------"
 set ignorecase
